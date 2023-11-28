@@ -10,7 +10,7 @@ function showSlides() {
     slideIndex = 1;
   }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 2000); 
+  setTimeout(showSlides, 8000); 
 }
 
 showSlides();
