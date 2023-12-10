@@ -12,13 +12,13 @@
 </head>
 <body><style>body { background-color: black; /*margin: 0;  padding: 0; display: flex; align-items: center; justify-content: center;  min-height: 100vh;*/ }</style>
     <nav class="mainpage">
-        <a href="index.html"><img class="logo" src="symbol.png" alt="logo"></a>
+        <a href="index.php"><img class="logo" src="symbol.png" alt="logo"></a>
         <ul>
-            <li><a href="church.html">Orthodox Church</a></li>
+            <li><a href="church.php">Orthodox Church</a></li>
             <li><a href="war.html">First World War</a></li>
             <li><a href="rasputin.html">Rasputin</a></li>
-            <li><a href="romanov.html">Romanov Family</a></li>
-            <li><a href="culture.html"><i class="fas fa-globe"></i></a></li>
+            <li><a href="romanov.php">Romanov Dynasty</a></li>
+            <li><a href="culture.php"><i class="fas fa-globe"></i></a></li>
             <div class="dropdown">
                 <li><a href="#"><i class="fas fa-user"></i></a></li> <!--página do user onde vai dar para fazer logout e alterar definições do utilizador armezenadas tanto em sessions como em cookies-->
                 <div class="dropdown-options">
@@ -30,21 +30,30 @@
               </div> 
         </ul>
     </nav>
-    <div class="imagens">
-      <img id="imagem1" src="test.jpg">
-      <img id="imagem2" src="test2.jpg">
-      <img id="imagem3" src="test3.jpg">
-      <img id="imagem4" src="test4.jpg">
-      <img id="imagem5" src="test5.jpg">
+    <div class="slider-container">
+        <button class="arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                  <img src="test.jpg" alt="Slide 1">
+                  <div class="slide-content">
+                      <h2>Year 1</h2>
+                      <p>Description for Year 1</p>
+                  </div>
+              </div>
+              <div class="slide">
+                  <img src="test2.jpg" alt="Slide 2">
+                  <div class="slide-content">
+                      <h2>Year 2</h2>
+                      <p>Description for Year 2</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <button class="arrow next" onclick="changeSlide(1)">&#10095;</button>
   </div>
-  <div id="descricaoContainer">
-      <h2 id="tituloImagem"></h2>
-      <p id="descricaoImagem"></p>
-  </div>
-  <br>
-  <div class="ranger">
-    <input type="range" min="1" max="5" value="1" class="slider" id="Slider">
-  </div>
-    <script defer src="war.js"></script>
+  <script src="war.js"></script> 
 </body>
 </html>
+
+

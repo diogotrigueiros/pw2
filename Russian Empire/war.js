@@ -20,6 +20,16 @@ slider.addEventListener('input', () => {
   updatetituloimagem(value);
 });
 
+function changeSlide(direction) {
+  /*const slider = document.querySelector('.slider');*/
+  const slides = document.querySelector('.slides');
+  const slideWidth = document.querySelector('.slide').offsetWidth;
+  const currentTranslate = parseFloat(slides.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+  const newTranslate = currentTranslate - direction * slideWidth; 
+
+  slides.style.transform = `translateX(${newTranslate}px)`;
+}
+
 function updatedescricaoImagem(value) {
   const descricaoImagemText = getdescricaoImagem(value);
   descricaoImagem.textContent = descricaoImagemText;

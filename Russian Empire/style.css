@@ -271,58 +271,100 @@ input[type="submit"] {
 }
 
 
-/* Family Tree */
+/* Romanov Dynasty */
 
-
-
-
-/* First World War */
-
-.ranger {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5; 
-}
-
-.slider {
-    width: 300px;
-}
-
-.imagens {
+.profile-container {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    margin-top: 100px;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    margin-top: 120px;
 }
 
-.imagens img {
-    display: none;
-    max-width: 50%;
-    max-height: auto;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+.profile-card {
+    width: 45%; 
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid goldenrod;
+    border-radius: 8px;
+    margin-bottom: 40px;
 }
 
-.imagens img.active {
-    display: block;
+.profile-card img {
+    width: 40%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
-#descricaoContainer {
-    width: 80%;
-    text-align: justify;
-    margin-top: 20px;
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
     color: white;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative; 
-    z-index: 1; 
+    text-align: justify;
 }
 
-#tituloImagem {
+.profile-info h2 {
     color: gold;
 }
 
+/* First World War */
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 48%;
+    height: auto;
+    margin-top: 120px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide-content {
+    color: white;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background-color: #333;
+    padding: 10px;
+    border: none;
+    outline: none;
+    z-index: 1;
+}
+
+.arrow:hover {
+    background-color: #555;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
 
 /*  Orthdox Church */
 
@@ -343,12 +385,130 @@ input[type="submit"] {
     border-radius: 8px;
 }
 
-.churchTopics h3, li {
+.churchTopics li {
     color: white;
     text-align: justify;
+}
+
+.churchTopics h3 {
+    color: goldenrod;
 }
 
 .churchTopics h2 {
     text-align: center;
     color: gold;
+}
+
+/* Rasputin */
+
+.rasputin {
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 120px;
+}
+
+.rasputinTopics {
+    margin-bottom: 30px;
+}
+
+.rasputinTopics section {
+    margin-top: 20px;
+}
+
+.rasputinTopics h2 {
+    margin-bottom: 10px;
+    color: gold;
+}
+
+.rasputinTopics p {
+    line-height: 1.6;
+    color: white;
+}
+
+.rasputinTopics img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+    font-style: italic;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .rasputin {
+        padding: 10px;
+}
+}
+
+
+/* Culture */
+
+.section {
+    margin: 20px;
+    margin-top: 60px;
+}
+
+.quotes-container {
+    margin-top: 120px;
+}
+
+.quote {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    background-color: #353935;
+}
+
+.author {
+    font-style: italic;
+    color: gold;
+    margin-top: 5px;
+}
+
+#art-section {
+    text-align: center;
+    align-items: center;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    place-items: center;
+    gap: 20px;
+    justify-content: center; 
+    align-items: center;
+}
+
+.gallery-container li {
+    color: gold;
+}
+
+.art-item {
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.art-item:hover {
+    transform: scale(1.05);
+}
+
+.art-item img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.music-player {
+    margin: 10px;
 }

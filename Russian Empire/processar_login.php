@@ -1,4 +1,7 @@
 <?php
+
+session_start(); 
+
 $servername = "localhost";
 $username = "user"; 
 $password = "password"; 
@@ -18,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        header("Location: index.html");
+        $_SESSION['username'] = $username;
+        header("Location: index.php");
     } else {
         echo "Credenciais inválidas. Tente novamente.";
     }
