@@ -10,17 +10,17 @@
 
 <body><style> body{ display: grid; place-items: center; text-align: center; background-size: cover; }</style>
     <nav class="mainpage">
-        <img class="logo" src="symbol.png" alt="logo">
+    <a href="index.php"><img class="logo" src="symbol.png" alt="logo"></a>
         <ul>
             <li><a href="church.php">Orthodox Church</a></li>
-            <li><a href="war.html">First World War</a></li>
-            <li><a href="rasputin.html">Rasputin</a></li>
-            <li><a href="romanov.php">Romanov Family</a></li>
+            <li><a href="war.php">First World War</a></li>
+            <li><a href="rasputin.php">Rasputin</a></li>
+            <li><a href="romanov.php">Romanov Dynasty</a></li>
             <li><a href="culture.php"><i class="fas fa-globe"></i></a></li>
             <div class="dropdown">
                 <li><a href="#"><i class="fas fa-user"></i></a></li> <!--página do user onde vai dar para fazer logout e alterar definições do utilizador armezenadas tanto em sessions como em cookies-->
                 <div class="dropdown-options">
-                  <a href="settings.php">Settings</a>
+                  <a href="suggestions.php">Suggestions</a>
                   <a href="logout.php">Logout</a>
                 </div>
               </div> 
@@ -46,7 +46,7 @@
             <img src="test5.jpg" alt="Slide 2">
         </div>
     </div>        
-    <form method="POST" action="processar_login.php">
+    <form class="loginForm" method="POST" action="processar_login.php">
         <h2 class="h2Login">Login</h2>
         <div class="field">
             <span class="fa fa-user"></span>

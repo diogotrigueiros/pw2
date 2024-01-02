@@ -65,7 +65,7 @@ nav a:hover {
 
 /* Slideshow */
 
-.slideshow-container {
+/*.slideshow-container {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -75,6 +75,22 @@ nav a:hover {
     top: 0;
     bottom: 0;
     z-index: -1;
+}*/
+
+.slideshow-container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden; /* Ensure the content doesn't overflow */
+}
+
+.slide-fade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .slide-fade {
@@ -83,7 +99,7 @@ nav a:hover {
 
 /* Content */
 
-.backgroundImage {
+/*.backgroundImage {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -93,12 +109,26 @@ nav a:hover {
     top: 0;
     bottom: 0;
     z-index: -1;
+}*/
+
+.backgroundImage {
+    width: auto;
+    height: auto;
+    background-size: cover;
+    background-image: url('russianEmpireFlag.jpg');
+    background-position: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
-img {
+/*img {
     width: 100%;
     height: auto;
-}
+}*/
 
 .content {
     display: flex;
@@ -163,7 +193,13 @@ img {
     }
 }
 
-/* form */ 
+/* login */ 
+
+/*.loginForm label {
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+}*/
 
 .h2Login {
     font-size: 25px;
@@ -172,7 +208,7 @@ img {
     color: rgb(247, 233, 233);
 }
 
-form {
+.loginForm {
     background-color: rgba(0, 0, 0, 0.3);
     width: 330px; 
     border-radius: 10px;
@@ -180,12 +216,6 @@ form {
     margin-top: 140px;
     box-shadow: -3px -3px 9px #aaa9a9a2,
               3px 3px 7px rgba(147, 149, 151, 0.671);
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: white;
 }
 
 .field{
@@ -223,7 +253,7 @@ label {
     color: #ffffff;
 }
 
-input[type="submit"] {
+.loginForm input[type="submit"] {
     margin: 25px 0 0 0;
     width: 100%;
     height: 50px;
@@ -273,6 +303,26 @@ input[type="submit"] {
 
 /* Romanov Dynasty */
 
+.audioFiles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.action-button {
+    background-color: goldenrod;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 40%;
+    height: auto;
+}
+
 .profile-container {
     display: flex;
     flex-wrap: wrap;
@@ -316,14 +366,14 @@ input[type="submit"] {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-top: 180px;
 }
 
 .slider {
     position: relative;
     overflow: hidden;
-    width: 48%;
+    width: 60%;
     height: auto;
-    margin-top: 120px;
 }
 
 .slides {
@@ -336,13 +386,23 @@ input[type="submit"] {
     box-sizing: border-box;
 }
 
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+}
+
 .slide-content {
     color: white;
 }
 
+.slide-content h2 {
+    color: gold;
+}
+
 .arrow {
     position: absolute;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     font-size: 24px;
     color: white;
@@ -367,6 +427,10 @@ input[type="submit"] {
 }
 
 /*  Orthdox Church */
+
+.churchMusic {
+    display: none;
+}
 
 .orthodoxChurch {
     display: flex;
@@ -411,6 +475,29 @@ input[type="submit"] {
 
 .rasputinTopics {
     margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
+}
+
+.rasputinTopics h2,
+.rasputinTopics p,
+.rasputinTopics img {
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
+}
+
+.rasputinTopics.slide-in h2,
+.rasputinTopics.slide-in p,
+.rasputinTopics.slide-in img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rasputinTopics.slide-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .rasputinTopics section {
@@ -420,6 +507,7 @@ input[type="submit"] {
 .rasputinTopics h2 {
     margin-bottom: 10px;
     color: gold;
+    cursor: pointer;
 }
 
 .rasputinTopics p {
@@ -439,12 +527,6 @@ input[type="submit"] {
 .quote {
     font-style: italic;
     color: #555;
-}
-
-@media (max-width: 600px) {
-    .rasputin {
-        padding: 10px;
-}
 }
 
 
@@ -511,4 +593,301 @@ input[type="submit"] {
 
 .music-player {
     margin: 10px;
+}
+
+/* suggestions */
+
+.suggestionsForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid goldenrod;
+    box-sizing: border-box;
+    padding: 75px;
+    width: 50%;
+    height: auto;
+    margin: auto; 
+    margin-top: 150px;
+    margin-bottom: 100px;
+    border-radius: 30px;
+}
+
+.suggestionsForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.suggestionsForm button {
+    background-color: goldenrod;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+
+.suggestionsMoviesBooks ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.suggestionsMoviesBooks li {
+    margin-bottom: 15px;
+    padding: 10px;
+    position: relative;
+    position: relative;
+    overflow: auto; 
+}
+
+
+
+.suggestionsMoviesBooks form[style="display: inline;"] {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.books {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    float: left;
+}
+
+.movies {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    float: left;
+}
+
+.updateDelete {
+    background-color: goldenrod;
+    padding: 20px;
+    color: white;
+    float: left;
+    cursor: pointer;
+    width: 50%;
+
+}
+
+.suggestionsTitle {
+    color: gold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.ura {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* church media queries */
+
+@media only screen and (max-width: 768px) {
+    .orthodoxChurch {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .churchTopics {
+        width: 100%;
+    }
+}
+
+/* romanov dynasty media queries */
+
+@media only screen and (max-width: 768px) {
+    .profile-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .profile-card {
+        width: 100%; 
+    }
+}
+
+/* rasputin media queries */
+
+@media only screen and (max-width: 768px) {
+    nav.mainpage ul {
+        flex-direction: row; 
+        justify-content: center; 
+    }
+
+    .rasputin {
+        padding: 10px; 
+    }
+
+    .rasputinTopics h2.accordion {
+        font-size: 20px; 
+    }
+
+    .rasputinTopics p {
+        font-size: 16px; 
+    }
+
+    .rasputinTopics img,
+    .rasputinTopics iframe {
+        max-width: 100%; 
+        height: auto;
+    }
+
+    .quote {
+        font-size: 14px; 
+    }
+}
+
+/* culture media queries */
+
+@media only screen and (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: auto; 
+    }
+
+    .quote,
+    .art-item {
+        width: 100%; 
+    }
+
+    .music-player {
+        width: 100%; 
+    }
+}
+
+/* suggestions media queries */
+
+@media only screen and (max-width: 768px) {
+    .suggestionsForm {
+        width: 80%;
+        padding: 50px;
+    }
+
+    .suggestionsMoviesBooks li {
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .updateDelete {
+        width: 100%;
+        float: none;
+        margin-top: 10px;
+    }
+}
+
+
+/* login media queries */
+
+@media screen and (max-width: 480px) {
+    .loginForm {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .field {
+        height: 40px;
+    }
+
+    .field input {
+        font-size: 14px;
+    }
+
+    .field span {
+        line-height: 40px;
+    }
+
+    .loginForm input[type="submit"] {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* Problemas no background image do login media queries */
+
+    .slide-fade img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* war media queries */
+
+@media screen and (max-width: 768px) {
+    .slider {
+        width: 80%; 
+    }
+
+    .arrow {
+        font-size: 18px; 
+        top: 60%;
+    }
+
+    .slide-iframe iframe {
+        width: 100%; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slider {
+        width: 90%; 
+    }
+
+    .arrow {
+        font-size: 16px; 
+        top: 50%;
+    }
+
+
+    .slide-iframe iframe {
+        width: 100%; 
+    }
+}
+
+/* navbar media queries */
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 10px; 
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-options {
+        display: none;
+        position: absolute;
+        width: 250px; 
+        z-index: 1; 
+        right: 0; 
+    }
+
+    .dropdown-options a {
+        padding: 15px;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        color: white;
+    }
+
+    .dropdown.active .dropdown-options {
+        display: block;
+        left: 0; 
+    }
 }

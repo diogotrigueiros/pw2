@@ -39,15 +39,15 @@ $audioFiles = mysqli_fetch_all($audioResult, MYSQLI_ASSOC);
         <a href="index.php"><img class="logo" src="symbol.png" alt="logo"></a>
         <ul>
             <li><a href="church.php">Orthodox Church</a></li>
-            <li><a href="war.html">First World War</a></li>
-            <li><a href="rasputin.html">Rasputin</a></li>
+            <li><a href="war.php">First World War</a></li>
+            <li><a href="rasputin.php">Rasputin</a></li>
             <li><a href="romanov.php">Romanov Dynasty</a></li>
             <li><a href="culture.php"><i class="fas fa-globe"></i></a></li>
             <div class="dropdown">
                 <li><a href="#"><i class="fas fa-user"></i></a></li>
                 <!--página do user onde vai dar para fazer logout e alterar definições do utilizador armezenadas tanto em sessions como em cookies-->
                 <div class="dropdown-options">
-                    <a href="settings.php"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="suggestions.php"><i class="fas fa-comment-medical"></i> Suggestions</a>
                     <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
