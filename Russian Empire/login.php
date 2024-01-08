@@ -4,6 +4,16 @@
 <link rel="shortcut icon" type="x-icon" href="symbol.png">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var icon = document.querySelector('.hamburger-icon');
+        var navList = document.querySelector('nav ul');
+
+        icon.addEventListener('click', function () {
+        navList.classList.toggle('show');
+        });
+    });
+    </script>
 <head>
     <title>Pagina de Login</title>
 </head>
@@ -11,6 +21,7 @@
 <body><style> body{ display: grid; place-items: center; text-align: center; background-size: cover; }</style>
     <nav class="mainpage">
     <a href="index.php"><img class="logo" src="symbol.png" alt="logo"></a>
+    <a class="hamburger-icon" href="#"><i class="fas fa-bars"></i></a>
         <ul>
             <li><a href="church.php">Orthodox Church</a></li>
             <li><a href="war.php">First World War</a></li>
@@ -27,23 +38,23 @@
         </ul>
     </nav>
     <div class="slideshow-container">
-        <div class="slide-fade">
-            <img src="test6.jpg" alt="Slide 2">
+    <div class="slide-fade" style="background-image: url('test6.jpg')">
+            <!-- <img src="test6.jpg" alt="Slide 2"> -->
         </div>
-        <div class="slide-fade">
-            <img src="test.jpg" alt="Slide 2">
+        <div class="slide-fade" style="background-image: url('test.jpg')">
+            <!-- <img src="test.jpg" alt="Slide 2"> -->
         </div>
-        <div class="slide-fade">
-            <img src="test2.jpg" alt="Slide 2">
+        <div class="slide-fade" style="background-image: url('test2.jpg')">
+            <!-- <img src="test2.jpg" alt="Slide 2"> -->
         </div>
-        <div class="slide-fade">
-            <img src="test3.jpg" alt="Slide 2">
+        <div class="slide-fade" style="background-image: url('test3.jpg')">
+            <!-- <img src="test3.jpg" alt="Slide 2"> -->
         </div>
-        <div class="slide-fade">
-            <img src="test4.jpg" alt="Slide 2">
+        <div class="slide-fade" style="background-image: url('test4.jpg')">
+            <!-- <img src="test4.jpg" alt="Slide 2"> -->
         </div>
-        <div class="slide-fade">
-            <img src="test5.jpg" alt="Slide 2">
+        <div class="slide-fade" style="background-image: url('test5.jpg')">
+            <!-- <img src="test5.jpg" alt="Slide 2"> -->
         </div>
     </div>        
     <form class="loginForm" method="POST" action="processar_login.php">

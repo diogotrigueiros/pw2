@@ -78,23 +78,24 @@ nav a:hover {
 }*/
 
 .slideshow-container {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
-    overflow: hidden; /* Ensure the content doesn't overflow */
-}
-
-.slide-fade img {
     width: 100%;
+    max-width: 100vw; 
     height: 100%;
-    object-fit: cover;
+    max-height: 100vh;
+    margin: auto;
+    z-index: -10;
 }
 
 .slide-fade {
-    display: none; /*Estava none*/
+    display: none;
+    width: 100%;
+    height: 100%; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Content */
@@ -809,8 +810,6 @@ img {
         font-size: 14px;
     }
 
-    /* Problemas no background image do login media queries */
-
     .slide-fade img {
         width: 100%;
         height: 100%;
@@ -852,42 +851,58 @@ img {
 
 /* navbar media queries */
 
+.hamburger-icon {
+    display: none; 
+}
+
 @media only screen and (max-width: 768px) {
     nav ul {
-        flex-direction: column;
-        align-items: flex-end;
+        display: none; 
     }
 
-    nav ul li {
-        margin: 10px 0;
+    .logo {
+        display: block; 
+        margin: 0 auto; 
     }
 
-    nav ul li a {
-        font-size: 10px; 
+    .hamburger-icon {
+        display: block; 
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+        z-index: 3; 
     }
 
-    .dropdown {
-        position: relative;
+    .dropdown,
+    .dropdown-options {
+        display: block; 
+        position: static; 
     }
 
     .dropdown-options {
-        display: none;
-        position: absolute;
-        width: 250px; 
-        z-index: 1; 
-        right: 0; 
+        text-align: center; 
     }
 
     .dropdown-options a {
-        padding: 15px;
-        text-align: center;
-        display: block;
-        text-decoration: none;
-        color: white;
+        margin: 10px 0; 
     }
 
-    .dropdown.active .dropdown-options {
-        display: block;
-        left: 0; 
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent; 
+        z-index: 2;
+    }
+
+    nav ul.show li {
+        margin: 10px 0;
     }
 }
+

@@ -31,12 +31,23 @@ $audioFiles = mysqli_fetch_all($audioResult, MYSQLI_ASSOC);
     <link rel="shortcut icon" type="x-icon" href="symbol.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var icon = document.querySelector('.hamburger-icon');
+        var navList = document.querySelector('nav ul');
+
+        icon.addEventListener('click', function () {
+        navList.classList.toggle('show');
+        });
+    });
+    </script>
     <title>Golden Age of Russian Culture</title>
 </head>
 <body>
     <style>body { background-color: black; margin: 0; padding: 0;}</style>
     <nav class="mainpage">
         <a href="index.php"><img class="logo" src="symbol.png" alt="logo"></a>
+        <a class="hamburger-icon" href="#"><i class="fas fa-bars"></i></a>
         <ul>
             <li><a href="church.php">Orthodox Church</a></li>
             <li><a href="war.php">First World War</a></li>

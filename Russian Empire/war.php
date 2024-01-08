@@ -30,11 +30,22 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var icon = document.querySelector('.hamburger-icon');
+        var navList = document.querySelector('nav ul');
+
+        icon.addEventListener('click', function () {
+        navList.classList.toggle('show');
+        });
+    });
+    </script>
     <title>First World War</title>
 </head>
 <body><style>body { background-color: black; /*margin: 0;  padding: 0; display: flex; align-items: center; justify-content: center;  min-height: 100vh;*/ }</style>
 <nav class="mainpage">
         <a href="index.php"><img class="logo" src="symbol.png" alt="logo"></a>
+        <a class="hamburger-icon" href="#"><i class="fas fa-bars"></i></a>
         <ul>
             <li><a href="church.php">Orthodox Church</a></li>
             <li><a href="war.php">First World War</a></li>

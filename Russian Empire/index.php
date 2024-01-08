@@ -11,6 +11,16 @@ session_start();
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script defer src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var icon = document.querySelector('.hamburger-icon');
+        var navList = document.querySelector('nav ul');
+
+        icon.addEventListener('click', function () {
+        navList.classList.toggle('show');
+        });
+    });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Russian Empire</title>
@@ -20,6 +30,7 @@ session_start();
     <div class="hero">
         <nav class="mainpage">
         <a href="index.php"><img class="logo" src="symbol.png" alt="logo"></a>
+        <a class="hamburger-icon" href="#"><i class="fas fa-bars"></i></a>
             <ul>
                 <li><a href="church.php">Orthodox Church</a></li>
                 <li><a href="war.php">First World War</a></li>
